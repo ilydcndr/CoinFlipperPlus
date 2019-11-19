@@ -3,6 +3,7 @@ import Coin from '../src/Coin';
 import './coinflipper.css';
 import Options from'./Optiondata';
 import {GetRandom} from './helpers';
+import options from './Optiondata';
 
 
 /* 1-tıkladığında dönsün (dönme durumu baslangıcta false olsun tıkladıgında true ya cek, true ıken rotate classını ekle.)
@@ -16,12 +17,13 @@ import {GetRandom} from './helpers';
    donme durumu set edelim buna bağlı değişiklikler meydana gelsin,
    paranın side ı değişeceği için 
    
-   --------------------------------------------------------------------------------------------------------------------
+   --------------------------------------------------------------------------------------------------------------------------------------------------------
    ÖNEMLİ
    helpersdaki fonksiyonlara hangilerini kullanacaksam onu belirterek import ediyorum.
    datayı const'un adı ile export et.
    olasılığın genişletilmesi durumunda tek tek yazmak yerine
    olasılık havuzu olustur.buraya dırek havuz dosyasını ekle degısken olarak kullan.
+
    */
 
 class Coinflipper extends Component{
@@ -34,8 +36,8 @@ class Coinflipper extends Component{
 
     }
 
-    
     flip=()=>{
+        const whatıhave=this.state.whatıhave
         const option=GetRandom(Options);
         this.setState({
             turn:true,
@@ -43,9 +45,9 @@ class Coinflipper extends Component{
        setTimeout(() => {
         this.setState({
             turn:false,
-            whatıhave:[...this.state.whatıhave].concat([option])
+            whatıhave:[...whatıhave].concat([option])
         }, ()=>{
-            console.log(this.state.whatıhave)
+            console.log(whatıhave)
         }
         )
     }, 1000); 
@@ -56,6 +58,20 @@ class Coinflipper extends Component{
              <div>
               <Coin turn={this.state.turn}/>
               <button onClick={this.flip}> AT!</button>
+              
+             <div>                 
+              {
+                 options.map((item)=>{
+                     const optionfiltered = this.state.whatıhave.filter((x)=>{
+                        return (
+                            item === x
+                        )   
+                     })
+                 })                
+              }
+              
+             </div>
+                
              </div>
          )
      }
