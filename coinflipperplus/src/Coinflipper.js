@@ -1,6 +1,8 @@
 import React,{Component} from 'react';
 import Coin from '../src/Coin';
-import './coinflipper.css'
+import './coinflipper.css';
+import Options from'./Optiondata';
+import {GetRandom} from './helpers';
 
 
 /* 1-tıkladığında dönsün (dönme durumu baslangıcta false olsun tıkladıgında true ya cek, true ıken rotate classını ekle.)
@@ -9,9 +11,17 @@ import './coinflipper.css'
    4-her bırınden kac adet geldiğini hesapla.(gelenler arrayi icerisinde, gelen option filtrelensin ve lengthi okunsun.)  
    ------------------------------------------------------------------------------------------------------------------------------------------
    SET EDİLECEK DEĞERLERİN BELİRLENMESİ
-
+   
    boş bir array set edelim ki gelenleri orada toplayalım,
    donme durumu set edelim buna bağlı değişiklikler meydana gelsin,
+   paranın side ı değişeceği için 
+   
+   --------------------------------------------------------------------------------------------------------------------
+   ÖNEMLİ
+   helpersdaki fonksiyonlara hangilerini kullanacaksam onu belirterek import ediyorum.
+   datayı const'un adı ile export et.
+   olasılığın genişletilmesi durumunda tek tek yazmak yerine
+   olasılık havuzu olustur.buraya dırek havuz dosyasını ekle degısken olarak kullan.
    */
 
 class Coinflipper extends Component{
@@ -24,15 +34,21 @@ class Coinflipper extends Component{
 
     }
 
+    
     flip=()=>{
+        const option=GetRandom(Options);
         this.setState({
-            turn:true
+            turn:true,
         });
        setTimeout(() => {
         this.setState({
             turn:false,
-        })       
-       }, 1000); 
+            whatıhave:[...this.state.whatıhave].concat([option])
+        }, ()=>{
+            console.log(this.state.whatıhave)
+        }
+        )
+    }, 1000); 
     }
 
      render(){

@@ -1,3 +1,3 @@
 const options=["yazi","tura"];
 
-export  default Constant;
+export  default options;
