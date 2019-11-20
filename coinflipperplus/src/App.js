@@ -1,10 +1,14 @@
 import React from 'react';
 import Coinflipper from '../src/Coinflipper';
+import './App.css';
 
 
 function App() {
   return (
-   <Coinflipper/>
+    <div className="App">
+      <Coinflipper/>
+    </div>
+   
   );
 }
 

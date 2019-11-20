@@ -7,6 +7,7 @@
     ) 
 };
 
+/*gelen random değerden kac adet var */
     export const RandomOptionsCount=(gelenler,option)=>{
         const RandomOption=gelenler.filter((item)=>{
             return(

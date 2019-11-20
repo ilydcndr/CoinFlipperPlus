@@ -7,8 +7,8 @@ function Coin(props){
     return(
          <div className={"Coin-container"}>
              <div className={`Coin ${props.turn ? 'Coin-rotate': ''}`}>
-                 <img src={tura}></img>
-                 <img src={yazi}></img>
+                 <img src={tura} className={`${props.option==="yazi" ? "Coin-back":"Coin-front"}`}></img>
+                 <img src={yazi} className={`${props.option==="yazi" ? "Coin-front":"Coin-back"}`}></img>
 
              </div>
          </div>

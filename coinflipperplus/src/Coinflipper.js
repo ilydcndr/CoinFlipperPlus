@@ -32,43 +32,44 @@ class Coinflipper extends Component{
         this.state={
             turn:false,
             whatıhave:[],
+            option:""       
         }
-
     }
 
-    flip=()=>{
-        const option=GetRandom(Options);        
+    flip=()=>{    
+        const option=GetRandom(Options)   
         this.setState({
             turn:true,
+            option:GetRandom(Options)               
         });
        setTimeout(() => {
         this.setState({
             turn:false,
-            whatıhave:[...this.state.whatıhave].concat([option])
-            
+            whatıhave:[...this.state.whatıhave].concat([this.state.option]),
+
         }, ()=>{
             console.log(this.state.whatıhave)
-        }
-        )
+        })
     }, 1000); 
-
-
     }
-
      render(){
          return(
-             <div>
-              <Coin turn={this.state.turn}/>
+             <div className="CoinFlipper">
+              <Coin turn={this.state.turn} option={this.state.option}/>
               <button onClick={this.flip}> AT!</button> 
-              {option} 
-              {RandomOptionsCount(this.state.whatıhave,option)}
+              <p>{this.state.whatıhave.length} Atıştan</p>
 
+              {/* 
+----------------------STATE'İN İCERİSİNDE BOŞ OPTİON TANIMLAYIP RANDOM FONKSİYONUNDAN GELEN DEGERLERİ ATAYABİLİRİZ------------------------------------- 
+    STATE'İN İÇERİSİNDE TANIMLADIGIMIZ BU DEĞERLERİ RENDER'DA ÇAĞIRABİLİRİZ. YANİ RANDOMDAN YAZI GELDİYSE
+    YAZI SAYISI,TURA GELDİYSE TURA SAYISI---------------------------------    
+     
+                     {RandomOptionsCount(this.state.whatıhave,this.state.option)}'u {this.state.option} 
 
-
-
-
-
-                {/*
+              {/*
+                */}
+                
+               {/*
  ------------------------HELPERS.JS DE FONKSİYON TANIMLAMADAN------------------------------------------------
                  <div> 
                  {this.state.whatıhave.length} atıştan
