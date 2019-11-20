@@ -31,21 +31,19 @@ class Coinflipper extends Component{
         super(props);
         this.state={
             turn:false,
-            whatıhave:[],
-            option:""       
+            whatıhave:[],     
         }
     }
 
-    flip=()=>{    
-        const option=GetRandom(Options)   
+    flip=()=>{
+        const option=GetRandom(Options);      
         this.setState({
-            turn:true,
-            option:GetRandom(Options)               
+            turn:true,               
         });
        setTimeout(() => {
         this.setState({
             turn:false,
-            whatıhave:[...this.state.whatıhave].concat([this.state.option]),
+            whatıhave:[...this.state.whatıhave].concat([option]),
 
         }, ()=>{
             console.log(this.state.whatıhave)
@@ -55,9 +53,20 @@ class Coinflipper extends Component{
      render(){
          return(
              <div className="CoinFlipper">
-              <Coin turn={this.state.turn} option={this.state.option}/>
-              <button onClick={this.flip}> AT!</button> 
-              <p>{this.state.whatıhave.length} Atıştan</p>
+              <Coin turn={this.state.turn} />
+              <button onClick={this.flip}> AT!</button>   
+              <p>{this.state.whatıhave.length} atıştan
+              {
+                  Options.map((item)=>{
+                    const RandomCount=RandomOptionsCount(this.state.whatıhave,item)
+                    return(
+                    <span> {RandomCount} {item}</span>
+                    )
+                  })
+                  
+              } 
+              </p>
+
 
               {/* 
 ----------------------STATE'İN İCERİSİNDE BOŞ OPTİON TANIMLAYIP RANDOM FONKSİYONUNDAN GELEN DEGERLERİ ATAYABİLİRİZ------------------------------------- 

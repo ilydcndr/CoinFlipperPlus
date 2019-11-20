@@ -8,10 +8,10 @@
 };
 
 /*gelen random değerden kac adet var */
-    export const RandomOptionsCount=(gelenler,option)=>{
+    export const RandomOptionsCount=(gelenler,filtrelenecekdeger)=>{
         const RandomOption=gelenler.filter((item)=>{
             return(
-                item===option
+                item===filtrelenecekdeger
             )     
         })
         return(
