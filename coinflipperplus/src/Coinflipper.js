@@ -3,7 +3,7 @@ import Coin from '../src/Coin';
 import './coinflipper.css';
 import Options from'./Optiondata';
 import {GetRandom,RandomOptionsCount} from './helpers';
-import options from './Optiondata';
+
 
 
 /* 1-tıkladığında dönsün (dönme durumu baslangıcta false olsun tıkladıgında true ya cek, true ıken rotate classını ekle.)
@@ -37,7 +37,7 @@ class Coinflipper extends Component{
     }
 
     flip=()=>{
-        const option=GetRandom(Options);    
+        const option=GetRandom(Options);        
         this.setState({
             turn:true,
         });
@@ -60,6 +60,13 @@ class Coinflipper extends Component{
              <div>
               <Coin turn={this.state.turn}/>
               <button onClick={this.flip}> AT!</button> 
+              {option} 
+              {RandomOptionsCount(this.state.whatıhave,option)}
+
+
+
+
+
 
                 {/*
  ------------------------HELPERS.JS DE FONKSİYON TANIMLAMADAN------------------------------------------------
@@ -79,9 +86,7 @@ class Coinflipper extends Component{
                  }                      
                 </div> 
  --------------------------------------------------------------------------------------------------------------               
-                */}  
-                {RandomOptionsCount(this.state.whatıhave,option)}       
-                
+                */}              
              </div>
          )
      }

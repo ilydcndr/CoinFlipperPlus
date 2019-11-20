@@ -7,8 +7,8 @@
     ) 
 };
 
-    export const RandomOptionsCount=(comes,option)=>{
-        const RandomOption=comes.filter((item)=>{
+    export const RandomOptionsCount=(gelenler,option)=>{
+        const RandomOption=gelenler.filter((item)=>{
             return(
                 item===option
             )     
@@ -16,4 +16,4 @@
         return(
             RandomOption.length
         )
-    }
+    };
