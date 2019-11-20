@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import Coin from '../src/Coin';
 import './coinflipper.css';
 import Options from'./Optiondata';
-import {GetRandom} from './helpers';
+import {GetRandom,RandomOptionsCount} from './helpers';
 import options from './Optiondata';
 
 
@@ -37,40 +37,50 @@ class Coinflipper extends Component{
     }
 
     flip=()=>{
-        const whatıhave=this.state.whatıhave
-        const option=GetRandom(Options);
+        const option=GetRandom(Options);    
         this.setState({
             turn:true,
         });
        setTimeout(() => {
         this.setState({
             turn:false,
-            whatıhave:[...whatıhave].concat([option])
+            whatıhave:[...this.state.whatıhave].concat([option])
+            
         }, ()=>{
-            console.log(whatıhave)
+            console.log(this.state.whatıhave)
         }
         )
     }, 1000); 
+
+
     }
 
      render(){
          return(
              <div>
               <Coin turn={this.state.turn}/>
-              <button onClick={this.flip}> AT!</button>
-              
-             <div>                 
-              {
-                 options.map((item)=>{
-                     const optionfiltered = this.state.whatıhave.filter((x)=>{
-                        return (
-                            item === x
-                        )   
-                     })
-                 })                
-              }
-              
-             </div>
+              <button onClick={this.flip}> AT!</button> 
+
+                {/*
+ ------------------------HELPERS.JS DE FONKSİYON TANIMLAMADAN------------------------------------------------
+                 <div> 
+                 {this.state.whatıhave.length} atıştan
+                 {                 
+                     options.map((item)=>{
+                       const filteredoption= this.state.whatıhave.filter((x)=>{
+                            return(
+                                    item===x   
+                            )
+                        })
+                        return(
+                        ` ${filteredoption.length}  ${item}`
+                        )
+                     })       
+                 }                      
+                </div> 
+ --------------------------------------------------------------------------------------------------------------               
+                */}  
+                {RandomOptionsCount(this.state.whatıhave,option)}       
                 
              </div>
          )

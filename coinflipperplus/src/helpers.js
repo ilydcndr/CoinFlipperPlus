@@ -6,3 +6,14 @@
         randomItem
     ) 
 };
+
+    export const RandomOptionsCount=(comes,option)=>{
+        const RandomOption=comes.filter((item)=>{
+            return(
+                item===option
+            )     
+        })
+        return(
+            RandomOption.length
+        )
+    }
