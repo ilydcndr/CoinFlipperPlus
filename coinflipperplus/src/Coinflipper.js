@@ -53,8 +53,26 @@ class Coinflipper extends Component{
      render(){
          return(
              <div className="CoinFlipper">
+              <div>
+                  { 
+                    Options.map((item)=>{
+                        if(Options[Options.length-1]===item){
+                        return(
+                        <span> {item}</span>
+                        )}
+                        else{
+                        return(
+                         <span> {item} YADA</span>
+                         )                          
+                        }
+                    })
+                    
+
+                  }
+              </div>   
               <Coin turn={this.state.turn} />
-              <button onClick={this.flip}> AT!</button>   
+              <button onClick={this.flip}> AT!</button>  
+               
               <p>{this.state.whatıhave.length} atıştan
               {
                   Options.map((item)=>{
@@ -66,7 +84,6 @@ class Coinflipper extends Component{
                   
               } 
               </p>
-
 
               {/* 
 ----------------------STATE'İN İCERİSİNDE BOŞ OPTİON TANIMLAYIP RANDOM FONKSİYONUNDAN GELEN DEGERLERİ ATAYABİLİRİZ------------------------------------- 
