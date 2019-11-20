@@ -53,7 +53,7 @@ class Coinflipper extends Component{
      render(){
          return(
              <div className="CoinFlipper">
-              <div>
+              <div style={{color:"red",fontWeight:"bolder",marginTop:"30px",textTransform:"uppercase"}}>
                   { 
                     Options.map((item)=>{
                         if(Options[Options.length-1]===item){
@@ -62,7 +62,7 @@ class Coinflipper extends Component{
                         )}
                         else{
                         return(
-                         <span> {item} YADA</span>
+                         <span> {item} yada </span>
                          )                          
                         }
                     })
