@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/CoinFlipperPlus/static/css/main.5ce09333.chunk.css",
+    "main.js": "/CoinFlipperPlus/static/js/main.1708c7d2.chunk.js",
+    "main.js.map": "/CoinFlipperPlus/static/js/main.1708c7d2.chunk.js.map",
+    "runtime-main.js": "/CoinFlipperPlus/static/js/runtime-main.9a4fda3f.js",
+    "runtime-main.js.map": "/CoinFlipperPlus/static/js/runtime-main.9a4fda3f.js.map",
+    "static/js/2.f9f8c388.chunk.js": "/CoinFlipperPlus/static/js/2.f9f8c388.chunk.js",
+    "static/js/2.f9f8c388.chunk.js.map": "/CoinFlipperPlus/static/js/2.f9f8c388.chunk.js.map",
+    "index.html": "/CoinFlipperPlus/index.html",
+    "precache-manifest.4a4316f2422e613dc8df26839a58f1dc.js": "/CoinFlipperPlus/precache-manifest.4a4316f2422e613dc8df26839a58f1dc.js",
+    "service-worker.js": "/CoinFlipperPlus/service-worker.js",
+    "static/css/main.5ce09333.chunk.css.map": "/CoinFlipperPlus/static/css/main.5ce09333.chunk.css.map",
+    "static/js/2.f9f8c388.chunk.js.LICENSE": "/CoinFlipperPlus/static/js/2.f9f8c388.chunk.js.LICENSE",
+    "static/media/1-lira-tura.png": "/CoinFlipperPlus/static/media/1-lira-tura.7c42669a.png",
+    "static/media/1-lira-yazi.png": "/CoinFlipperPlus/static/media/1-lira-yazi.9b70882e.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9a4fda3f.js",
+    "static/js/2.f9f8c388.chunk.js",
+    "static/css/main.5ce09333.chunk.css",
+    "static/js/main.1708c7d2.chunk.js"
+  ]
+}
